@@ -3,8 +3,7 @@
 
 
 int main() {
-    printf("cc");
-    char *file = "/Users/arthurcoelho/Documents/wordGenerator/dictionnaire_non_accentue.txt";
-    openFile(file);
+    char *file = "C:\\Users\\cassi\\Documents\\GitHub\\wordGenerator\\dictionnaire_non_accentue.txt";
+    fillTrees(file);
 
 }

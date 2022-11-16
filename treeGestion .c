@@ -23,6 +23,7 @@ Node * addWord(char* word, Tree tree){
         }
     }
     return node;
+
 }
 
 Node * createNode(char data){
