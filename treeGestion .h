@@ -11,11 +11,13 @@
 #include "struct.h"
 #include <stdlib.h>
 
-
-Node * addWord(char*, Tree);
+List * createList();
 Node * createNode(char data);
 Cell * createCell();
-
+void addNode(Node * , Node *)
+void printTree(Node *);
+bool foundInList(List * , char );
+Node * addWord(char * , Tree * )
 
 
 

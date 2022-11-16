@@ -17,25 +17,25 @@ void fillTrees(char* fileName, Tree ver, Tree adv, Tree adj, Tree nom){
     char baseForm[26], flexForm[26], type[20], *arg;
     dico = fopen(fileName,"r");
     if (dico!=NULL){
-        while (fscanf(dico,"%s\t%s\t%s",baseForm, flexForm, type) != EOF){
-            printf("%s  %s  %s %s\n", baseForm, flexForm, type);
+        while (fscanf(dico,"%s\t%s\t%s",flexForm, baseForm, type) != EOF){
             // Returns first token
             char* token = strtok(type, ":");
-            printf("%s\n", token);
             //select Tree then fill it
             switch (whatTree(token)) {
                 case 1:
-                    addWord(baseForm, nom);
+                    addWord(baseForm, &nom);
                 case 2:
-                    addWord(baseForm, adj);
+                    addWord(baseForm, &adj);
                 case 3:
-                    addWord(baseForm, adv);
+                    addWord(baseForm, &adv);
                 case 4:
-                    addWord(baseForm, ver);
+                    addWord(baseForm, &ver);
             }
         }
     }
+    printTree(nom.root);
     fclose(dico);
+
 }
 
 
