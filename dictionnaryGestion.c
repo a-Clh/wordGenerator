@@ -1,4 +1,7 @@
+#include <string.h>
+#include <stdbool.h>
 #include "dictionnaryGestion.h"
+#include "struct.h"
 
 void openFile(char* fileName){
     FILE *dico = NULL;
@@ -15,3 +18,6 @@ void openFile(char* fileName){
 
     fclose(dico);
 }
+
+
+

@@ -2,10 +2,10 @@
 #define WORDGENERATOR_STRUCT_H
 
 
-
 typedef struct node {
     char data;
     struct list* child;
+    _Bool isWord;
 }Node;
 
 
@@ -23,6 +23,7 @@ typedef struct list {
 typedef struct tree {
     Node* root;
 }Tree;
+
 
 
 

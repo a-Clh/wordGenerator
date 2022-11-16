@@ -4,4 +4,5 @@
 #define MAX 1000
 void openFile(char* fileName);
 
+
 #endif //WORDGENERATOR_DICTIONNARYGESTION_H
