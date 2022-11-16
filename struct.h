@@ -2,6 +2,7 @@
 #define WORDGENERATOR_STRUCT_H
 
 
+
 typedef struct node {
     char data;
     struct list* child;
