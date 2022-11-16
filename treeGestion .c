@@ -1,6 +1,8 @@
 #include "treeGestion .h"
 
 
+
+
 List * createList(){
     List *newList = malloc(sizeof(List));
     newList->head = NULL;
@@ -16,6 +18,14 @@ Node * createNode(char data){
     newNode->isWord = false;
     return newNode;
 }
+
+
+Tree createEmptyTree () {
+    Tree tree;
+    tree.root = createNode(0);
+    return tree;
+}
+
 
 Cell *createCell(){
     Cell *newCell = malloc(sizeof(Cell));
@@ -58,7 +68,7 @@ Node * addWord(char * word, Tree * tree) {
     Cell * tempNodelist = temp->child->head;
 
     for(int i = 0; i < strlen(word); i++) {
-        if(!isInList(temp->child, word[i])) {
+        if(!foundInList(temp->child, word[i])) {
             Node * node = createNode(word[i]);
             addNode(temp, node);
             temp = node;
@@ -74,7 +84,8 @@ Node * addWord(char * word, Tree * tree) {
     return temp;
 }
 
-/*void printTree(Node * node) {
+
+void printTree(Node * node) {
     if(node->data != ' ') {
         printf("%c", node->data);
     }
@@ -96,5 +107,41 @@ Node * addWord(char * word, Tree * tree) {
             printf("]");
         }
     }
-}*\
+}
+
+Cell* searchInTree (Tree tree, char* word) {
+    Cell * temp = tree.root->child->head;
+    Cell * startOfSearchedWord;
+    for(int i = 0; i < strlen(word); i++) {
+        bool found = false;
+        while(temp != NULL && !found) {
+            if(temp->data->data == word[i]) {
+                 found = true;
+            }
+            temp = temp->next;
+        }
+        if (!found) return NULL;
+        if (i == 0) startOfSearchedWord = temp;
+        temp = temp->data->child->head;
+    }
+    return startOfSearchedWord;
+}
+
+int countList (Cell* head) {
+    int count = 0;
+    while(head != NULL ) {
+        count++;
+        head = head->next;
+    }
+    return count;
+}
+
+
+char* pickRandomBaseForm (Tree tree) {
+    Cell * temp = tree.root->child->head;
+    int count = 1;
+    while (temp != NULL) {
+
+    }
+}
 

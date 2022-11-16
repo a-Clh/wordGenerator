@@ -1,7 +1,3 @@
-//
-// Created by cassie on 16/11/2022.
-//
-
 #ifndef WORDGENERATOR_TREEGESTION_H
 #define WORDGENERATOR_TREEGESTION_H
 
@@ -11,14 +7,14 @@
 #include "struct.h"
 #include <stdlib.h>
 
+Tree createEmptyTree ();
 List * createList();
 Node * createNode(char data);
 Cell * createCell();
-void addNode(Node * , Node *)
+void addNode(Node * , Node *);
 void printTree(Node *);
 bool foundInList(List * , char );
-Node * addWord(char * , Tree * )
+Node * addWord(char * , Tree * );
 
 
-
-#endif //WORDGENERATOR_TREEGESTION_H
+#endif

@@ -3,12 +3,13 @@
 
 
 int main() {
-    char *file = "C:\\Users\\cassi\\Documents\\GitHub\\wordGenerator\\dictionnaire_non_accentue.txt";
-    Tree tree;
-    tree.root = createNode(0);
-
-
-
-    fillTrees(file, tree, tree, tree, tree);
+    char *file = "C:\\Users\\Coelho Arthur\\CLionProjects\\wordGenerator\\dictionnaire_non_accentue.txt";
+    Tree nom, ver, adj, adv;
+    nom = ver = adj = adv = createEmptyTree();
+    fillTrees(file, ver, adv, adj, nom);
+//    printTree(nom.root);
+//    printTree(ver.root);
+//    printTree(adj.root);
+//    printTree(adj.root);
 
 }
