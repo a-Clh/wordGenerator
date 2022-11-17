@@ -1,11 +1,12 @@
 #ifndef WORDGENERATOR_STRUCT_H
 #define WORDGENERATOR_STRUCT_H
+#include <stdbool.h>
 
 
 typedef struct node {
     char data;
+    bool isWord;
     struct list* child;
-    _Bool isWord;
 }Node;
 
 

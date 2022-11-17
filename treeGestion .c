@@ -65,7 +65,7 @@ bool foundInList (List * nodelist, char data) {
 
 Node * addWord(char * word, Tree * tree) {
     Node * temp = tree->root;
-    Cell * tempNodelist = temp->child->head;
+    Cell * listCell = temp->child->head;
 
     for(int i = 0; i < strlen(word); i++) {
         if(!foundInList(temp->child, word[i])) {
@@ -73,11 +73,11 @@ Node * addWord(char * word, Tree * tree) {
             addNode(temp, node);
             temp = node;
         } else {
-            while(tempNodelist->data->data != word[i]) {
-                tempNodelist = tempNodelist->next;
+            while(listCell->data->data != word[i]) {
+                listCell = listCell->next;
             }
-            temp = tempNodelist->data;
-            tempNodelist = temp->child->head;
+            temp = listCell->data;
+            listCell = temp->child->head;
         }
     }
     temp->isWord = 1;
@@ -139,9 +139,9 @@ int countList (Cell* head) {
 
 char* pickRandomBaseForm (Tree tree) {
     Cell * temp = tree.root->child->head;
-    int count = 1;
+    int countFromHead = 0, countFromCurrent = 0;
     while (temp != NULL) {
-
+        countFromHead =
     }
 }
 
