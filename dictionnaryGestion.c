@@ -25,7 +25,7 @@ void fillTrees(char* fileName, Tree ver, Tree adv, Tree adj, Tree nom){
         while (fscanf(dico,"%s\t%s\t%s",flexForm, baseForm, type) != EOF){
             // Returns first token
             char* token = strtok(type, ":");
-            //printf("%s %d\n", token, whatTree(token));
+//            printf("%s %d\n", token, whatTree(token));
             //select Tree then fill it
             switch (whatTree(token)) {
                 case 1:
