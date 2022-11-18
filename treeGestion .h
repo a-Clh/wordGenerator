@@ -6,6 +6,7 @@
 #include "dictionnaryGestion.h"
 #include "struct.h"
 #include <stdlib.h>
+#include <time.h>
 
 Tree createEmptyTree ();
 List * createList();
@@ -15,6 +16,7 @@ void addNode(Node * , Node *);
 void printTree(Node *);
 bool foundInList(List * , char );
 Node * addWord(char * , Tree * );
+char* pickRandomBaseForm (Tree tree);
 
 
 #endif

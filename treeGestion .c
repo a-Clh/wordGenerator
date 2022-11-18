@@ -138,10 +138,30 @@ int countList (Cell* head) {
 
 
 char* pickRandomBaseForm (Tree tree) {
-    Cell * temp = tree.root->child->head;
-    int count = 1;
-    while (temp != NULL) {
-
+    Cell * temp = tree.root->child->head, *toKeepAdress;
+    int countWord = 0, countLetter = 1, lengthToKeep;
+    char *word, keep;
+    word = malloc(20* sizeof(char));
+    bool inTree = true;
+    //pick a random word
+    while (inTree){
+        //pick a random letter in the List of Cells
+        while (temp != NULL) {
+            if (rand()%countLetter == 0){
+                keep = temp->data->data;
+                toKeepAdress = temp;
+            }
+            temp = temp->next;
+            countLetter++;
+        }
+        countLetter = 1;
+        word[countWord] = keep;
+        countWord++;
+        temp = toKeepAdress->data->child->head;
+        inTree = (temp == NULL) ? false : true;
+        lengthToKeep = (rand()%countWord-1 == 0) ? countWord : lengthToKeep;
     }
+    word[countWord] = '\0';
+    return word;
 }
 
