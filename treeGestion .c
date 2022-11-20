@@ -112,19 +112,22 @@ void printTree(Node * node) {
 Cell* searchInTree (Tree tree, char* word) {
     Cell * temp = tree.root->child->head;
     Cell * startOfSearchedWord;
+    bool isWord;
     for(int i = 0; i < strlen(word); i++) {
         bool found = false;
         while(temp != NULL && !found) {
             if(temp->data->data == word[i]) {
                  found = true;
             }
-            temp = temp->next;
+            if (!found) temp = temp->next;
         }
         if (!found) return NULL;
+        isWord = temp->data->isWord;
         if (i == 0) startOfSearchedWord = temp;
         temp = temp->data->child->head;
     }
-    return startOfSearchedWord;
+    if (isWord) return startOfSearchedWord;
+    return NULL;
 }
 
 int countList (Cell* head) {
